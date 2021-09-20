@@ -10,7 +10,7 @@ _paginate: false
 ---
 
 <!-- _class: lead12
-_footer: 'Cсылка на [слайды](polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
+_footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
 -->
 
 # Как ускорить запросы к InfluxDB
@@ -400,7 +400,7 @@ _footer: 'Cсылка на [слайды](polarnik.github.io/influxdb-bench/), �
 ---
 
 <!-- _class: lead12
-_footer: 'Cсылка на [слайды](polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
+_footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
 -->
 
 # Вопросы/ответы<br> Как ускорить запросы к InfluxDB
