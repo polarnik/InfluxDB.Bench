@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Из слона (PostgreSQL) муху (баги)
-description: Мониторинг, анализ и оптимизация SQL-запросов
+title: Как ускорить запросы к InfluxDB
+description: Как ускорить запросы к InfluxDB с помощью InfluxQL Continuous Queries и разделения данных 
 theme: vtb
 template: bespoke
 paginate: true
@@ -10,7 +10,7 @@ _paginate: false
 ---
 
 <!-- _class: lead12
-_footer: 'Cсылка на [слайды](https://polarnik.github.io/InfluxDB.Bench/), ссылка [на бенчмарк](https://github.com/polarnik/InfluxDB.Bench)'
+_footer: 'Cсылка на [слайды](polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
 -->
 
 # Как ускорить запросы к InfluxDB
@@ -400,7 +400,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/InfluxDB.Be
 ---
 
 <!-- _class: lead12
-_footer: 'Cсылка на [слайды](https://polarnik.github.io/InfluxDB.Bench/), ссылка [на бенчмарк](https://github.com/polarnik/InfluxDB.Bench)'
+_footer: 'Cсылка на [слайды](polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)
 -->
 
 # Вопросы/ответы<br> Как ускорить запросы к InfluxDB
