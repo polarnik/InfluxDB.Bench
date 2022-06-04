@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*!
+ * Marp / Marpit TDConf theme.
+ *
+ * @theme tdconf
+ * @auto-scaling true
+ * @author Smirnov Viacheslav
+ */
+
+ @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+ @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css");
+ 
+@font-face{
+    font-family: "TTTravels-DemiBold";
+    src: url("themes/font/TTTravels-DemiBold.ttf") format("truetype");
+}
+@font-face{
+    font-family: "TTTravels-Regular";
+    src: url("themes/font/TTTravels-Regular.ttf") format("truetype");
+}
+:root {
+    --bg-color: #000000;
+    --bg-color-error: #900258;
+    --bg-color-half: #0518307d;
+    --main-bg-color: #002882;
+    --title-h1-color: #002882; 
+    --title-h2-color: #00AAFF;
+    --tdconf: #AACF37;
+}
+
+section {
+    background-color: var(--bg-color) ;
+    background-image: url("themes/img/Logo_TDC_white.svg"), url("themes/img/TestDriven_footer.png");
+    background-position: 91% 97%, 0% bottom;
+    background-repeat: no-repeat,  no-repeat;
+    background-size: 15%,  100%;
+    background-origin: padding-box,  border-box; 
+    color: #fff !important;
+    font-family: 'TTTravels-Regular';
+    padding: 0;
+    padding-left: 3%;
+    font-size: 190%;
+ }
+
+ footer {
+    box-sizing: border-box;
+    font-size: 66%;
+    height: 60px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 10px 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+ section.lead {
+    background-image: url("themes/img/lead/miro2.svg"), url("themes/img/lead/tdconf.dark.png"); 
+    background-position: 88% 38%, right bottom;
+    background-repeat: no-repeat,  no-repeat;
+    background-size: 11%,  cover;
+    background-origin: padding-box,  border-box;
+    color: white !important;
+    text-decoration-color: white !important;
+}
+
+section h1, section h2, section h3 {
+    font-size: 150%;
+    text-shadow: 0px 0px 5px #000000;
+}
+section h1 {
+    font-family: 'TTTravels-DemiBold';
+}
+section h3 {
+    color: var(--tdconf);
+}
+
+section.lead h1, section.lead h2, section.lead h3,
+section.title h1, section.title h2, section.title h3 {
+    font-size: 150%;
+    margin: 0;
+    z-index: 3;
+    position: absolute;
+    width: 70%;
+    text-shadow: 0px 0px 5px #000000;
+}
+section.lead h1, section.title h1 {
+    top: 50%;
+}
+section.lead h2, section.title h2 {
+    top: 77%;
+}
+section.lead h3, section.title h3 {
+    top: 85%;
+}
+
+section.title h1 {
+    width: 50%;
+}
+section.title h2 {
+    width: 80%;
+}
+
+section code {
+    font-family: 'JetBrains Mono', monospace;
+}
+section > p > code
+{
+    word-wrap: anywhere;
+}
+section pre, section > code, section > pre, section > p {
+    margin: 30px;
+}
+section li::marker {
+    color: var(--tdconf);
+}
+
+b, h1 strong, strong {
+    color: var(--tdconf);
+}

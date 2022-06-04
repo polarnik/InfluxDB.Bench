@@ -2,20 +2,21 @@
 marp: true
 title: Как ускорить запросы к InfluxDB
 description: Как ускорить запросы к InfluxDB с помощью InfluxQL Continuous Queries и разделения данных 
-theme: vtb
+theme: tdconf
 template: bespoke
 paginate: true
 _paginate: false
 
 ---
 
-<!-- _class: lead12
-_footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
+<!-- _class: lead
 -->
 
-# Как ускорить запросы к InfluxDB
+# Как ускорить запросы к InfluxDB с помощью InfluxQL Continuous Queries и разделения данных
 
-## __Смирнов Вячеслав, 2021__
+## Смирнов Вячеслав
+
+### Miro 
 
 <!--
 
@@ -25,8 +26,9 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 
 <!-- _class: title-->
 
-# Тестирую и ускоряю ДБО для юридических лиц в банке ВТБ
-## __Развиваю @qa_load__
+# Ускоряю и тестирую инфраструктурные сервисы в Miro
+## Развиваю сообщество нагрузочников
+### @qa_load
 
 ![bg cover](img/omsk.jpg)
 
@@ -38,7 +40,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 <!-- _class: main
 -->
 
-# Об ускорении InfluxDB глазами инженера по нагрузке. О Continuous Queries и подготовке данных для запросов
+# Об ускорении __InfluxDB__ глазами инженера по нагрузке. О __Continuous Queries__ и подготовке данных для запросов
 
 
 
@@ -47,19 +49,19 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 
 # Содержание
 
-1) Когда оптимизация InfluxDB важна
-2) Ресурсы для InfluxDB и их мониторинг
+1) Когда оптимизация __InfluxDB__ важна
+2) Ресурсы для __InfluxDB__ и их мониторинг
 3) Ограничение интенсивности и параллельности запросов
-5) Замер длительности запроса из Grafana в InfluxDB
+5) Замер длительности запроса из __Grafana__ в __InfluxDB__
 3) Разделение баз данных по серверам
-2) Уменьшение Shared Size для экономии оперативной памяти
-3) Изменение типа индекса с memory на tsi1
+2) Уменьшение __Shared Size__ для экономии оперативной памяти
+3) Изменение типа индекса с __memory__ на __tsi1__
 6) Удаление значений тегов с низкой селективностью
 4) Увеличение гранулярности хранения метрик
-5) Подготовка данных для ответа с помощью Continuous Queries
+5) Подготовка данных для ответа с помощью __Continuous Queries__
 5) Быстрые фильтры по тегам: метаданные и данные
-5) InfluxQL и Flux
-5) InfluxDB v1, InfluxDB v2 и VictoriaMetrics
+5) Переход с __InfluxQL__ на __Flux__
+5) Смена БД __InfluxDB__ v1, __InfluxDB__ v2, __VictoriaMetrics__, __ClickHouse__
 5) Итоги
 
 ---
@@ -135,7 +137,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 
 ---
 
-# Ограничиваем coordinator/max-concurrent-queries
+# Ограничиваем __max-concurrent-queries__
 
 ```yaml
 [coordinator]
@@ -152,7 +154,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 <!-- _class: error
 -->
 
-# Ошибка при достижении max-concurrent-queries
+# Ошибка при достижении __max-concurrent-queries__
 
 **_![  ](img/max-concurrent-queries.error.png)_**
 
@@ -165,7 +167,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 
 ---
 
-# Ограничиваем coordinator/query-timeout
+# Ограничиваем __query-timeout__
 
 ```yaml
 [coordinator]
@@ -181,7 +183,7 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 <!-- _class: error
 -->
 
-# Ошибка при достижении query-timeout
+# Ошибка при достижении __query-timeout__
 
 **_![  ](img/query-timeout.error.png)_**
 
@@ -382,13 +384,13 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 <!-- _class: main
 -->
 
-# InfluxQL и Flux
+# Переход с InfluxQL на Flux
 
 ---
 <!-- _class: main
 -->
 
-# InfluxDB v1, InfluxDB v2 и VictoriaMetrics
+# Смена БД InfluxDB v1, InfluxDB v2, VictoriaMetrics, ClickHouse
 
 ---
 <!-- _class: main
@@ -403,9 +405,13 @@ _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-be
 _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
 -->
 
-# Вопросы/ответы<br> Как ускорить запросы к InfluxDB
+# Вопросы/ответы
 
-## __Смирнов Вячеслав, @qa_load__
+# Как ускорить запросы к InfluxDB
+
+## Смирнов Вячеслав
+
+### @qa_load
 
 
 
