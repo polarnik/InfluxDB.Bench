@@ -21,11 +21,8 @@
 }
 :root {
     --bg-color: #000000;
-    --bg-color-error: #900258;
-    --bg-color-half: #0518307d;
-    --main-bg-color: #002882;
-    --title-h1-color: #002882; 
-    --title-h2-color: #00AAFF;
+    --text-color: #fff;
+
     --tdconf: #AACF37;
 }
 
@@ -36,12 +33,21 @@ section {
     background-repeat: no-repeat,  no-repeat;
     background-size: 15%,  100%;
     background-origin: padding-box,  border-box; 
-    color: #fff !important;
+    color: var(--text-color) !important;
     font-family: 'TTTravels-Regular';
     padding: 0;
     padding-left: 3%;
     font-size: 190%;
+    text-shadow: 0px 0px 5px var(--bg-color);
  }
+
+ section.invert {
+    background-color: var(--text-color) ;
+    background-image: url("themes/img/Logo_TDC.svg"), url("themes/img/TestDriven_footer.png");
+    color: var(--bg-color) !important;
+    text-shadow: 0px 0px 5px var(--text-color);
+ }
+
 
  footer {
     box-sizing: border-box;
@@ -57,18 +63,17 @@ section {
 }
 
  section.lead {
-    background-image: url("themes/img/lead/miro2.svg"), url("themes/img/lead/tdconf.dark.png"); 
+    background-image: url("themes/img/lead/miro.svg"), url("themes/img/lead/tdconf.dark.png"); 
     background-position: 88% 38%, right bottom;
     background-repeat: no-repeat,  no-repeat;
     background-size: 11%,  cover;
     background-origin: padding-box,  border-box;
-    color: white !important;
-    text-decoration-color: white !important;
+    color: var(--text-color) !important;
+    text-decoration-color: var(--text-color)  !important;
 }
 
 section h1, section h2, section h3 {
     font-size: 150%;
-    text-shadow: 0px 0px 5px #000000;
 }
 section h1 {
     font-family: 'TTTravels-DemiBold';
