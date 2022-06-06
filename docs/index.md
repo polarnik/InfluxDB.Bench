@@ -192,7 +192,7 @@ _paginate: false
 ---
 # Проект __influxdb-bench__ на __github__, где настроен мониторинг
 
-## https://github.com/polarnik/influxdb-bench
+## `https://github.com/polarnik/influxdb-bench`
 
 ---
 <!-- _class: invert -->
