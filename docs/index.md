@@ -89,13 +89,13 @@ _paginate: false
 
 # Вы отвечаете за инфраструктуру тестирования
 
-![bg fit](img/infra.team.png)
+![bg height:75%](img/infra.team.png)
 
 ---
 
 # Много тестов производительности с __k6__, __JMeter__, __Gatling__, __Yandex.Tank__, ...
 
-![bg fit](img/infra.tools.png)
+![bg height:75%](img/infra.tools.png)
 
 ---
 
@@ -121,18 +121,18 @@ _paginate: false
 
 
 ---
-# Оптимизация выборки метрик c __InfluxDB__ и __Grafana__ OSS
+# Оптимизация выборки c __InfluxDB__ и __Grafana__ OSS
 
 ![bg 75%](img/grafana.optimisation.png)
 
 
 ---
-# Оптимизация аггрегации метрик c __Continuous Queries__: аггрегировать на лету сложно
+# Аггрегировать метрики на лету сложно
 
 ![bg 80%](img/Complex.query.png)
 
 ---
-# Оптимизация аггрегации метрик c __Continuous Queries__: можно предрасчитать результат
+# Предрасчитаем результат с __Continuous Queries__
 
 ![bg 80%](img/Continuous.query.png)
 
@@ -164,6 +164,35 @@ _paginate: false
   - Количество конкурентных запросов к __InfluxDB__
 - Мониторинг логов __InfluxDB__ (тяжелые запросы)
 - Мониторинг логов __Grafana__ (тяжелые отчеты)
+
+---
+# Мониторинг общесистемных метрик
+
+---
+# Мониторинг метрик процесса __InfluxDB__
+
+---
+# Нехватка памяти для __InfluxDB__ и перезапуски
+
+---
+# Мониторинг внутренних метрик __InfluxDB__ из базы данных **__internal**
+
+---
+# Размеры шард __InfluxDB__
+
+---
+# Количество конкурентных запросов к __InfluxDB__
+
+---
+# Мониторинг логов __InfluxDB__ (тяжелые запросы)
+
+---
+# Мониторинг логов __Grafana__ (тяжелые отчеты)
+
+---
+# Проект __influxdb-bench__ на __github__, где настроен мониторинг
+
+## https://github.com/polarnik/influxdb-bench
 
 ---
 <!-- _class: invert -->

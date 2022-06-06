@@ -5,20 +5,540 @@
  * @theme tdconf
  * @auto-scaling true
  * @author Smirnov Viacheslav
- */@font-face{font-family:"TTTravels-DemiBold";src:url("themes/font/TTTravels-DemiBold.ttf") format("truetype")}@font-face{font-family:"TTTravels-Regular";src:url("themes/font/TTTravels-Regular.ttf") format("truetype")}div#p>svg>foreignObject>section:not(a){--bg-color:#000000;--bg-color-error:#900258;--bg-color-half:#0518307d;--main-bg-color:#002882;--title-h1-color:#002882;--title-h2-color:#00AAFF;--tdconf:#AACF37}div#p>svg>foreignObject>section{background-color:var(--bg-color) ;background-image:url("themes/img/Logo_TDC_white.svg"),url("themes/img/TestDriven_footer.png");background-position:91% 97%,0% bottom;background-repeat:no-repeat,no-repeat;background-size:15%,100%;background-origin:padding-box,border-box;color:#fff!important;font-family:'TTTravels-Regular';padding:0;padding-left:3%;font-size:190%}div#p>svg>foreignObject>section{--marpit-root-font-size:190%}div#p>svg>foreignObject>section footer{box-sizing:border-box;font-size:66%;height:60px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute;left:0;right:0;bottom:0}div#p>svg>foreignObject>section.lead{background-image:url("themes/img/lead/miro2.svg"),url("themes/img/lead/tdconf.dark.png");background-position:88% 38%,right bottom;background-repeat:no-repeat,no-repeat;background-size:11%,cover;background-origin:padding-box,border-box;color:white!important;text-decoration-color:white!important}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3{font-size:150%;text-shadow:0px 0px 5px #000000}div#p>svg>foreignObject>section h1{font-family:'TTTravels-DemiBold'}div#p>svg>foreignObject>section h3{color:var(--tdconf)}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.title h1,div#p>svg>foreignObject>section.title h2,div#p>svg>foreignObject>section.title h3{font-size:150%;margin:0;z-index:3;position:absolute;width:70%;text-shadow:0px 0px 5px #000000}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.title h1{top:50%}div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.title h2{top:77%}div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.title h3{top:85%}div#p>svg>foreignObject>section.title h1{width:50%}div#p>svg>foreignObject>section.title h2{width:80%}div#p>svg>foreignObject>section code{font-family:'JetBrains Mono',monospace}div#p>svg>foreignObject>section>p>code{word-wrap:anywhere}div#p>svg>foreignObject>section pre,div#p>svg>foreignObject>section>code,div#p>svg>foreignObject>section>p,div#p>svg>foreignObject>section>pre{margin:30px}div#p>svg>foreignObject>section li::marker{color:var(--tdconf)}div#p>svg>foreignObject>section b,div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section strong{color:var(--tdconf)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="lead" data-theme="tdconf" class="lead" style="--class:lead;--theme:tdconf;">
+ */@font-face{font-family:"TTTravels-DemiBold";src:url("themes/font/TTTravels-DemiBold.ttf") format("truetype")}@font-face{font-family:"TTTravels-Regular";src:url("themes/font/TTTravels-Regular.ttf") format("truetype")}div#p>svg>foreignObject>section:not(a){--bg-color:#000000;--text-color:#fff;--tdconf:#AACF37}div#p>svg>foreignObject>section{background-color:var(--bg-color) ;background-image:url("themes/img/Logo_TDC_white.svg"),url("themes/img/TestDriven_footer.png");background-position:91% 97%,0% bottom;background-repeat:no-repeat,no-repeat;background-size:15%,100%;background-origin:padding-box,border-box;color:var(--text-color)!important;font-family:'TTTravels-Regular';padding:0;padding-left:3%;font-size:190%;text-shadow:0px 0px 5px var(--bg-color)}div#p>svg>foreignObject>section{--marpit-root-font-size:190%}div#p>svg>foreignObject>section.invert{background-color:var(--text-color) ;background-image:url("themes/img/Logo_TDC.svg"),url("themes/img/TestDriven_footer.png");color:var(--bg-color)!important;text-shadow:0px 0px 5px var(--text-color)}div#p>svg>foreignObject>section footer{box-sizing:border-box;font-size:66%;height:60px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute;left:0;right:0;bottom:0}div#p>svg>foreignObject>section.lead{background-image:url("themes/img/lead/miro.svg"),url("themes/img/lead/tdconf.dark.png");background-position:88% 38%,right bottom;background-repeat:no-repeat,no-repeat;background-size:11%,cover;background-origin:padding-box,border-box;color:var(--text-color)!important;text-decoration-color:var(--text-color)!important}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3{font-size:150%}div#p>svg>foreignObject>section h1{font-family:'TTTravels-DemiBold'}div#p>svg>foreignObject>section h3{color:var(--tdconf)}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.title h1,div#p>svg>foreignObject>section.title h2,div#p>svg>foreignObject>section.title h3{font-size:150%;margin:0;z-index:3;position:absolute;width:70%;text-shadow:0px 0px 5px #000000}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.title h1{top:50%}div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.title h2{top:77%}div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.title h3{top:85%}div#p>svg>foreignObject>section.title h1{width:50%}div#p>svg>foreignObject>section.title h2{width:80%}div#p>svg>foreignObject>section code{font-family:'JetBrains Mono',monospace}div#p>svg>foreignObject>section>p>code{word-wrap:anywhere}div#p>svg>foreignObject>section pre,div#p>svg>foreignObject>section>code,div#p>svg>foreignObject>section>p,div#p>svg>foreignObject>section>pre{margin:30px}div#p>svg>foreignObject>section li::marker{color:var(--tdconf)}div#p>svg>foreignObject>section b,div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section strong{color:var(--tdconf)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="lead" data-theme="tdconf" class="lead" style="--class:lead;--theme:tdconf;">
 <h1>Как ускорить запросы к InfluxDB с помощью InfluxQL Continuous Queries и разделения данных</h1>
 <h2>Смирнов Вячеслав</h2>
 <h3>Miro</h3>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="47" style="--paginate:true;--class:title;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/omsk.jpg&quot;);background-size:cover;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="47" style="--paginate:true;--class:title;--theme:tdconf;" data-marpit-advanced-background="content">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="87" style="--paginate:true;--class:title;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/omsk.jpg&quot;);background-size:cover;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="87" style="--paginate:true;--class:title;--theme:tdconf;" data-marpit-advanced-background="content">
 <h1>Ускоряю и тестирую инфраструктурные сервисы в Miro</h1>
 <h2>Развиваю сообщество нагрузочников</h2>
 <h3>@qa_load</h3>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="47" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="3" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
-<h1>Об ускорении <strong>InfluxDB</strong> глазами инженера по нагрузке. О <strong>Continuous Queries</strong> и подготовке данных для запросов</h1>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="title" data-theme="tdconf" class="title" data-marpit-pagination="2" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="3" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
+<h1>Об ускорении <strong>InfluxDB</strong></h1>
+<h1>глазами инженера по нагрузке.</h1>
+<h1>О <strong>Continuous Queries</strong> и</h1>
+<h1>подготовке данных для запросов</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="14" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="4" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="14" data-paginate="true" data-theme="tdconf" data-marpit-pagination="4" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Содержание</h1>
+<ol>
+<li data-marpit-fragment="1"><img class="emoji" draggable="false" alt="⁉️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2049.svg" data-marp-twemoji=""/> Когда оптимизация <strong>InfluxDB</strong> важна</li>
+<li data-marpit-fragment="2"><img class="emoji" draggable="false" alt="📊" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f4ca.svg" data-marp-twemoji=""/> Мониторинг производительности <strong>InfluxDB</strong></li>
+<li data-marpit-fragment="3"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Разделение данных на разные базы и серверы <strong>InfluxDB</strong></li>
+<li data-marpit-fragment="4"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Конфигурирование сервера <strong>InfluxDB</strong></li>
+<li data-marpit-fragment="5"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Кеширование ответов на запросы от <strong>Grafana</strong> к <strong>InfluxDB</strong> с <strong>NGINX</strong></li>
+<li data-marpit-fragment="6"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> «Архивирование» медленной базы <strong>InfluxDB</strong> в <strong>Grafana</strong></li>
+<li data-marpit-fragment="7"><img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Сокращение количества и ускорение фильтров по тегам в <strong>Grafana</strong></li>
+<li data-marpit-fragment="8"><img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Удаление значений тегов с низкой селективностью из <strong>InfluxDB</strong></li>
+<li data-marpit-fragment="9"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Увеличение интервала сохранения метрик из <strong>JMeter</strong>, <strong>Gatling</strong>, <strong>Telegraf</strong>, ...</li>
+<li data-marpit-fragment="10"><img class="emoji" draggable="false" alt="🔬" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f52c.svg" data-marp-twemoji=""/> Замер длительности ответа на запрос из <strong>Grafana</strong> в <strong>InfluxDB</strong></li>
+<li data-marpit-fragment="11"><img class="emoji" draggable="false" alt="🚀" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f680.svg" data-marp-twemoji=""/> Подготовка данных для ответа с помощью <strong>Continuous Queries</strong></li>
+<li data-marpit-fragment="12"><img class="emoji" draggable="false" alt="‼️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/203c.svg" data-marp-twemoji=""/> Сокращение количества <strong>Continuous Queries</strong></li>
+<li data-marpit-fragment="13"><img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Переход с <strong>InfluxQL</strong> на <strong>Flux</strong></li>
+<li data-marpit-fragment="14"><img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Смена БД <strong>InfluxDB</strong> v1.8, <strong>InfluxDB</strong> v2, <strong>VictoriaMetrics</strong> или <strong>ClickHouse</strong></li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="tdconf" data-marpit-pagination="5" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>1.</strong> <img class="emoji" draggable="false" alt="⁉️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2049.svg" data-marp-twemoji=""/> Когда оптимизация <strong>InfluxDB</strong> важна</h1>
+<ul>
+<li>
+<p>Большой продукт, как <strong>Miro</strong></p>
+</li>
+<li>
+<p>Вы отвечаете за инфраструктуру тестирования</p>
+</li>
+<li>
+<p>Много тестов производительности с <strong>k6</strong>, <strong>JMeter</strong>, <strong>Gatling</strong>, <strong>Yandex.Tank</strong>, ...</p>
+</li>
+<li>
+<p>Хранятся данные за годы и строятся тренды</p>
+</li>
+<li>
+<p>И вы хотите ускорить <strong>InfluxDB</strong> OSS v1.8.10 или <strong>InfluxDB</strong> OSS v2.2.0</p>
+</li>
+<li>
+<p>Оптимизация записи метрик в <strong>InfluxDB</strong> c <strong>Telegraf</strong> v1.22.4</p>
+</li>
+<li>
+<p>Оптимизация выборки метрик c <strong>InfluxDB</strong> и <strong>Grafana</strong> OSS v8.5.4</p>
+</li>
+<li>
+<p>Оптимизация аггрегации метрик c <strong>Continuous Queries</strong></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="6" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/miro.png&quot;);background-size:cover;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="tdconf" data-marpit-pagination="6" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Большой продукт, как <strong>Miro</strong></h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="6" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="7" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/infra.team.png&quot;);background-size:auto 75%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="tdconf" data-marpit-pagination="7" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Вы отвечаете за инфраструктуру тестирования</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="7" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="8" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/infra.tools.png&quot;);background-size:auto 75%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="tdconf" data-marpit-pagination="8" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Много тестов производительности с <strong>k6</strong>, <strong>JMeter</strong>, <strong>Gatling</strong>, <strong>Yandex.Tank</strong>, ...</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="8" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="9" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/trend.png&quot;);background-size:75%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="tdconf" data-marpit-pagination="9" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Хранятся данные за годы и строятся тренды</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="9" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="10" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/influxdb.versions.png&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="tdconf" data-marpit-pagination="10" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Вы хотите ускорить <strong>InfluxDB</strong> OSS v1.8 или v2.2</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="10" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="11" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/wo.telegraf.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="tdconf" data-marpit-pagination="11" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Одновременная запись метрик может тормозить</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="11" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="12" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/telegraf.for.write.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="tdconf" data-marpit-pagination="12" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Оптимизация записи метрик в <strong>InfluxDB</strong> c <strong>Telegraf</strong></h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="12" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="13" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/grafana.optimisation.png&quot;);background-size:75%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="tdconf" data-marpit-pagination="13" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Оптимизация выборки c <strong>InfluxDB</strong> и <strong>Grafana</strong> OSS</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="13" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="14" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/Complex.query.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="tdconf" data-marpit-pagination="14" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Аггрегировать метрики на лету сложно</h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="14" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="15" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/Continuous.query.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="tdconf" data-marpit-pagination="15" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;" data-marpit-advanced-background="content">
+<h1>Предрасчитаем результат с <strong>Continuous Queries</strong></h1>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="tdconf" data-marpit-pagination="15" data-marpit-pagination-total="87" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="16" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>1.</strong> <img class="emoji" draggable="false" alt="⁉️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2049.svg" data-marp-twemoji=""/> Когда оптимизация <strong>InfluxDB</strong> важна</h1>
+<ul>
+<li>
+<p>Большой продукт, как <strong>Miro</strong></p>
+</li>
+<li>
+<p>Вы отвечаете за инфраструктуру тестирования</p>
+</li>
+<li>
+<p>Много тестов производительности с <strong>k6</strong>, <strong>JMeter</strong>, <strong>Gatling</strong>, <strong>Yandex.Tank</strong>, ...</p>
+</li>
+<li>
+<p>Хранятся данные за годы и строятся тренды</p>
+</li>
+<li>
+<p>И вы хотите ускорить <strong>InfluxDB</strong> OSS v1.8.10 или <strong>InfluxDB</strong> OSS v2.2.0</p>
+</li>
+<li>
+<p>Оптимизация записи метрик в <strong>InfluxDB</strong> c <strong>Telegraf</strong> v1.22.4</p>
+</li>
+<li>
+<p>Оптимизация выборки метрик c <strong>InfluxDB</strong> и <strong>Grafana</strong> OSS v8.5.4</p>
+</li>
+<li>
+<p>Оптимизация аггрегации метрик c <strong>Continuous Queries</strong></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="tdconf" data-marpit-pagination="17" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>2.</strong> <img class="emoji" draggable="false" alt="📊" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f4ca.svg" data-marp-twemoji=""/> Мониторинг производительности <strong>InfluxDB</strong></h1>
+<ul>
+<li>
+<p>Мониторинг общесистемных метрик</p>
+</li>
+<li>
+<p>Мониторинг метрик процесса <strong>InfluxDB</strong></p>
+<ul>
+<li>Нехватка памяти для <strong>InfluxDB</strong> и перезапуски</li>
+</ul>
+</li>
+<li>
+<p>Мониторинг внутренних метрик <strong>InfluxDB</strong> из базы данных <strong>__internal</strong></p>
+<ul>
+<li>Размеры шард <strong>InfluxDB</strong></li>
+<li>Количество конкурентных запросов к <strong>InfluxDB</strong></li>
+</ul>
+</li>
+<li>
+<p>Мониторинг логов <strong>InfluxDB</strong> (тяжелые запросы)</p>
+</li>
+<li>
+<p>Мониторинг логов <strong>Grafana</strong> (тяжелые отчеты)</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="tdconf" data-marpit-pagination="18" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Мониторинг общесистемных метрик</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="tdconf" data-marpit-pagination="19" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Мониторинг метрик процесса <strong>InfluxDB</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="tdconf" data-marpit-pagination="20" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Нехватка памяти для <strong>InfluxDB</strong> и перезапуски</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="tdconf" data-marpit-pagination="21" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Мониторинг внутренних метрик <strong>InfluxDB</strong> из базы данных <strong>__internal</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="tdconf" data-marpit-pagination="22" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Размеры шард <strong>InfluxDB</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="tdconf" data-marpit-pagination="23" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Количество конкурентных запросов к <strong>InfluxDB</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-theme="tdconf" data-marpit-pagination="24" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Мониторинг логов <strong>InfluxDB</strong> (тяжелые запросы)</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="tdconf" data-marpit-pagination="25" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Мониторинг логов <strong>Grafana</strong> (тяжелые отчеты)</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-theme="tdconf" data-marpit-pagination="26" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Проект <strong>influxdb-bench</strong> на <strong>github</strong>, где настроен мониторинг</h1>
+<h2><a href="https://github.com/polarnik/influxdb-bench">https://github.com/polarnik/influxdb-bench</a></h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="27" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>2.</strong> <img class="emoji" draggable="false" alt="📊" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f4ca.svg" data-marp-twemoji=""/> Мониторинг производительности <strong>InfluxDB</strong></h1>
+<ul>
+<li>
+<p>Мониторинг общесистемных метрик</p>
+</li>
+<li>
+<p>Мониторинг метрик процесса <strong>InfluxDB</strong></p>
+<ul>
+<li>Нехватка памяти для <strong>InfluxDB</strong> и перезапуски</li>
+</ul>
+</li>
+<li>
+<p>Мониторинг внутренних метрик <strong>InfluxDB</strong> из базы данных <strong>__internal</strong></p>
+<ul>
+<li>Размеры шард <strong>InfluxDB</strong></li>
+<li>Количество конкурентных запросов к <strong>InfluxDB</strong></li>
+</ul>
+</li>
+<li>
+<p>Мониторинг логов <strong>InfluxDB</strong> (тяжелые запросы)</p>
+</li>
+<li>
+<p>Мониторинг логов <strong>Grafana</strong> (тяжелые отчеты)</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="tdconf" data-marpit-pagination="28" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>3.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Разделение данных на разные базы и серверы <strong>InfluxDB</strong></h1>
+<ul>
+<li>
+<p>Разные базы данных для команд и стендов</p>
+</li>
+<li>
+<p>Разные серверы для команд и стендов</p>
+</li>
+<li>
+<p>Разные серверы для архивных и новых данных</p>
+</li>
+<li>
+<p>Построение трендов по метрикам из одной базы данных</p>
+</li>
+<li>
+<p>Использование отдельной базы данных для хранения общей статистики</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="29" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>3.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Разделение данных на разные базы и серверы <strong>InfluxDB</strong></h1>
+<ul>
+<li>
+<p>Разные базы данных для команд и стендов</p>
+</li>
+<li>
+<p>Разные серверы для команд и стендов</p>
+</li>
+<li>
+<p>Разные серверы для архивных и новых данных</p>
+</li>
+<li>
+<p>Построение трендов по метрикам из одной базы данных</p>
+</li>
+<li>
+<p>Использование отдельной базы данных для хранения общей статистики</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-theme="tdconf" data-marpit-pagination="30" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>4.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Конфигурирование сервера <strong>InfluxDB</strong></h1>
+<ul>
+<li>Ограничиваем <strong><code>max-concurrent-queries</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>max_conns</code></strong> в <strong>nginx</strong> upstream</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>query-timeout</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>fail_timeout</code></strong> в <strong>nginx</strong> upstream</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>max-select-series</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>Max series</code></strong> в <strong>Grafana</strong> DataSource</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>max-select-buckets</code></strong></li>
+<li>Ограчиниваем <strong><code>max-select-point</code></strong>
+<ul>
+<li>Ограничиваем <strong>Min time interval</strong> в <strong>Grafana</strong> DataSource</li>
+<li>Ограничиваем <strong>Max data points</strong> в <strong>Grafana</strong> Query options</li>
+</ul>
+</li>
+<li>Изменение типа индекса с <strong><code>memory</code></strong> на <strong><code>tsi1</code></strong></li>
+<li>Логирование медленных запросов c <strong><code>log-queries-after</code></strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="31" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
+<h1>Ограничение интенсивности и параллельности запросов в <strong><code>[coordinator]</code></strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="tdconf" data-marpit-pagination="32" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Оцениваем предельное количество запросов</h1>
+<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="tdconf" data-marpit-pagination="33" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Ограничиваем <strong>max-concurrent-queries</strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The maximum number of concurrent queries </span>
+  <span class="hljs-comment"># allowed to be executing at one time.  </span>
+  <span class="hljs-comment"># If a query is executed and exceeds this limit, </span>
+  <span class="hljs-comment"># an error is returned to the caller.  </span>
+  <span class="hljs-comment"># This limit can be disabled by setting it to 0.</span>
+  <span class="hljs-string">max-concurrent-queries</span> <span class="hljs-string">=</span> <span class="hljs-number">5</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="34" data-marpit-pagination-total="87" style="--paginate:true;--class:error;--theme:tdconf;">
+<h1>Ошибка при достижении <strong>max-concurrent-queries</strong></h1>
+<p><strong><em><img src="img/max-concurrent-queries.error.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="tdconf" data-marpit-pagination="35" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Оцениваем предельную длительность запросов</h1>
+<p><strong><em><img src="img/query-timeout.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="tdconf" data-marpit-pagination="36" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Ограничиваем <strong>query-timeout</strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The maximum time a query will is allowed </span>
+  <span class="hljs-comment"># to execute before being killed by the system.  </span>
+  <span class="hljs-comment"># This limit can help prevent run away queries.  </span>
+  <span class="hljs-comment"># Setting the value to 0 disables the limit.</span>
+  <span class="hljs-string">query-timeout</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;90s&quot;</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="37" data-marpit-pagination-total="87" style="--paginate:true;--class:error;--theme:tdconf;">
+<h1>Ошибка при достижении <strong>query-timeout</strong></h1>
+<p><strong><em><img src="img/query-timeout.error.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-theme="tdconf" data-marpit-pagination="38" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Оцениваем предельное количество тегов ответа</h1>
+<p><strong><em><img src="img/influxdb.series.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="tdconf" data-marpit-pagination="39" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Ограничиваем <strong><code>max-select-series</code></strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The maximum number of series a SELECT can run. </span>
+  <span class="hljs-comment"># A value of 0 will make the maximum series</span>
+  <span class="hljs-comment"># count unlimited.</span>
+  
+  <span class="hljs-comment"># max-select-series = 0</span>
+  <span class="hljs-string">max-select-series</span> <span class="hljs-string">=</span> <span class="hljs-number">1000</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="40" data-marpit-pagination-total="87" style="--paginate:true;--class:error;--theme:tdconf;">
+<h1>Ошибка при достижении <strong><code>max-select-series</code></strong></h1>
+<p><strong><em><img src="img/max-select-series.error.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-theme="tdconf" data-marpit-pagination="41" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Оцениваем предел группировки по времени</h1>
+<p><strong><em><img src="img/influxdb.series.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-theme="tdconf" data-marpit-pagination="42" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Ограничиваем <strong><code>max-select-buckets</code></strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The maxium number of group by </span>
+  <span class="hljs-comment"># time bucket a SELECT can create.</span>
+  <span class="hljs-comment"># A value of zero will max the maximum </span>
+  <span class="hljs-comment"># number of buckets unlimited.</span>
+  
+  <span class="hljs-comment"># max-select-buckets = 0</span>
+  <span class="hljs-string">max-select-buckets</span> <span class="hljs-string">=</span> <span class="hljs-number">1900</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="43" data-marpit-pagination-total="87" style="--paginate:true;--class:error;--theme:tdconf;">
+<h1>Ошибка при достижении <strong><code>max-select-buckets</code></strong></h1>
+<p><strong><em><img src="img/max-select-buckets.error.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-theme="tdconf" data-marpit-pagination="44" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Оцениваем предельное количество точек ответа</h1>
+<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
+<p>Предельное значение:</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>Группы по тегам x 
+Группы по времени x
+Количество полей
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-theme="tdconf" data-marpit-pagination="45" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Количество точек ответа и размер ответа</h1>
+<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="tdconf" data-marpit-pagination="46" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Количество точек ответа и исходящий трафик</h1>
+<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-theme="tdconf" data-marpit-pagination="47" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Ограничиваем <strong><code>max-select-point</code></strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The maximum number of points a SELECT can process.  </span>
+  <span class="hljs-comment"># A value of 0 will make the maximum point count unlimited.  </span>
+  <span class="hljs-comment"># This will only be checked every second so queries will not</span>
+  <span class="hljs-comment"># be aborted immediately when hitting the limit.</span>
+  
+  <span class="hljs-comment"># max-select-point = 0</span>
+  <span class="hljs-string">max-select-point</span> <span class="hljs-string">=</span> <span class="hljs-number">20000</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="48" data-marpit-pagination-total="87" style="--paginate:true;--class:error;--theme:tdconf;">
+<h1>Ошибка при достижении <strong><code>max-select-point</code></strong></h1>
+<p><strong><em><img src="img/max-select-point.error.png" alt="  " /></em></strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-theme="tdconf" data-marpit-pagination="49" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Изменение типа индекса с <strong><code>memory</code></strong> на <strong><code>tsi1</code></strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-theme="tdconf" data-marpit-pagination="50" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1>Логирование медленных запросов c <strong><code>log-queries-after</code></strong></h1>
+<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
+  <span class="hljs-comment"># The time threshold when a query will be </span>
+  <span class="hljs-comment"># logged as a slow query.  </span>
+  <span class="hljs-comment"># This limit can be set to help</span>
+  <span class="hljs-comment"># discover slow or resource intensive queries.  </span>
+  <span class="hljs-comment"># Setting the value to 0 disables the slow query logging.</span>
+  <span class="hljs-string">log-queries-after</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;5s&quot;</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="51" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>4.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Конфигурирование сервера <strong>InfluxDB</strong></h1>
+<ul>
+<li>Ограничиваем <strong><code>max-concurrent-queries</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>max_conns</code></strong> в <strong>nginx</strong> upstream</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>query-timeout</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>fail_timeout</code></strong> в <strong>nginx</strong> upstream</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>max-select-series</code></strong>
+<ul>
+<li>Ограничиваем <strong><code>Max series</code></strong> в <strong>Grafana</strong> DataSource</li>
+</ul>
+</li>
+<li>Ограничиваем <strong><code>max-select-buckets</code></strong></li>
+<li>Ограчиниваем <strong><code>max-select-point</code></strong>
+<ul>
+<li>Ограничиваем <strong>Min time interval</strong> в <strong>Grafana</strong> DataSource</li>
+<li>Ограничиваем <strong>Max data points</strong> в <strong>Grafana</strong> Query options</li>
+</ul>
+</li>
+<li>Изменение типа индекса с <strong><code>memory</code></strong> на <strong><code>tsi1</code></strong></li>
+<li>Логирование медленных запросов c <strong><code>log-queries-after</code></strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-theme="tdconf" data-marpit-pagination="52" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>5.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Кеширование ответов на запросы от <strong>Grafana</strong> к <strong>InfluxDB</strong> с <strong>NGINX</strong></h1>
+<ul>
+<li>
+<p>Кеширование <strong>GET</strong>-запросов в <strong>NGINX</strong></p>
+</li>
+<li>
+<p>Кеширование <strong>POST</strong>-запросов в <strong>NGINX</strong></p>
+</li>
+<li>
+<p>Влияние интервалов времени <strong>Grafana</strong> на кеширование</p>
+</li>
+<li>
+<p>Замена динамического интервала вида <strong><code>now()-6h...now()</code></strong> статитическим</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="53" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>5.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Кеширование ответов на запросы от <strong>Grafana</strong> к <strong>InfluxDB</strong> с <strong>NGINX</strong></h1>
+<ul>
+<li>
+<p>Кеширование <strong>GET</strong>-запросов в <strong>NGINX</strong></p>
+</li>
+<li>
+<p>Кеширование <strong>POST</strong>-запросов в <strong>NGINX</strong></p>
+</li>
+<li>
+<p>Влияние интервалов времени <strong>Grafana</strong> на кеширование</p>
+</li>
+<li>
+<p>Замена динамического интервала вида <strong><code>now()-6h...now()</code></strong> статитическим</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-theme="tdconf" data-marpit-pagination="54" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>6.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> «Архивирование» медленной базы <strong>InfluxDB</strong> в <strong>Grafana</strong></h1>
+<ul>
+<li>
+<p><strong>Grafana</strong> как реестр активных баз данных</p>
+</li>
+<li>
+<p>Переименование медленной базы данных в <strong>{name}-{from}-{to}</strong></p>
+</li>
+<li>
+<p>Перенос файлов базы данных <strong>{name}-{from}-{to}</strong> на архивный сервер</p>
+</li>
+<li>
+<p>Создание пустой базы данных <strong>{name}-{from}</strong></p>
+</li>
+<li>
+<p>Настройка <strong>Grafana DataSource</strong> с именем <strong>{name}</strong> на новую базу данных</p>
+</li>
+<li>
+<p>Создание <strong>Grafana DataSource</strong> для архивной базы данных</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-class="invert" data-theme="tdconf" class="invert" data-marpit-pagination="55" data-marpit-pagination-total="87" style="--paginate:true;--class:invert;--theme:tdconf;">
+<h1><strong>6.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> «Архивирование» медленной базы <strong>InfluxDB</strong> в <strong>Grafana</strong></h1>
+<ul>
+<li>
+<p><strong>Grafana</strong> как реестр активных баз данных</p>
+</li>
+<li>
+<p>Переименование медленной базы данных в <strong>{name}-{from}-{to}</strong></p>
+</li>
+<li>
+<p>Перенос файлов базы данных <strong>{name}-{from}-{to}</strong> на архивный сервер</p>
+</li>
+<li>
+<p>Создание пустой базы данных <strong>{name}-{from}</strong></p>
+</li>
+<li>
+<p>Настройка <strong>Grafana DataSource</strong> с именем <strong>{name}</strong> на новую базу данных</p>
+</li>
+<li>
+<p>Создание <strong>Grafana DataSource</strong> для архивной базы данных</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-theme="tdconf" data-marpit-pagination="56" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>7.</strong> <img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Сокращение количества и ускорение фильтров по тегам в <strong>Grafana</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-theme="tdconf" data-marpit-pagination="57" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>8.</strong> <img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Удаление значений тегов с низкой селективностью из <strong>InfluxDB</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-theme="tdconf" data-marpit-pagination="58" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>9.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Увеличение интервала сохранения метрик из <strong>JMeter</strong>, <strong>Gatling</strong>, <strong>Telegraf</strong>, ...</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-theme="tdconf" data-marpit-pagination="59" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>10.</strong> <img class="emoji" draggable="false" alt="🔬" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f52c.svg" data-marp-twemoji=""/> Замер длительности ответа на запрос из <strong>Grafana</strong> в <strong>InfluxDB</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-theme="tdconf" data-marpit-pagination="60" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>11.</strong> <img class="emoji" draggable="false" alt="🚀" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f680.svg" data-marp-twemoji=""/> Подготовка данных для ответа с помощью <strong>Continuous Queries</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-paginate="true" data-theme="tdconf" data-marpit-pagination="61" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>12.</strong> <img class="emoji" draggable="false" alt="‼️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/203c.svg" data-marp-twemoji=""/> Сокращение количества <strong>Continuous Queries</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-theme="tdconf" data-marpit-pagination="62" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>13.</strong> <img class="emoji" draggable="false" alt="🛠️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f6e0.svg" data-marp-twemoji=""/> Переход с <strong>InfluxQL</strong> на <strong>Flux</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-paginate="true" data-theme="tdconf" data-marpit-pagination="63" data-marpit-pagination-total="87" style="--paginate:true;--theme:tdconf;">
+<h1><strong>14.</strong> <img class="emoji" draggable="false" alt="⚙️" src="https://twemoji.maxcdn.com/v/14.0.2/svg/2699.svg" data-marp-twemoji=""/> Смена БД <strong>InfluxDB</strong> v1.8, <strong>InfluxDB</strong> v2, <strong>VictoriaMetrics</strong> или <strong>ClickHouse</strong></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-marpit-fragments="14" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="64" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Содержание</h1>
 <ol>
 <li data-marpit-fragment="1">Когда оптимизация <strong>InfluxDB</strong> важна</li>
@@ -37,211 +557,85 @@
 <li data-marpit-fragment="14">Итоги</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="5" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="65" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Когда оптимизация InfluxDB важна</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="6" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="66" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Большое количество тестов производительности</h1>
 <h2><strong>JMeter, Gatling, Perfomance Center, Tank</strong></h2>
 <h2><strong>Плюс мониторинг в InfluxDB</strong></h2>
 <p><strong><em><img src="img/tools.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="7" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="67" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Тяжелые отчеты и конкурентные запросы</h1>
 <p><strong><em><img src="img/reports.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="8" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="68" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Нехватка памяти для InfluxDB и перезапуски</h1>
 <p><strong><em><img src="img/memory.limit.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="9" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="69" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Ресурсы для InfluxDB и их мониторинг</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="10" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="70" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Оперативная память сервера</h1>
 <p><strong><em><img src="img/memory.limit.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="11" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="71" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Количество конкурентных запросов</h1>
 <p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="12" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="72" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Размеры шард</h1>
 <p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="13" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="73" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Настроенный мониторинг (доска Grafana)</h1>
 <p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="14" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
-<h1>Ограничение интенсивности и параллельности запросов в [coordinator]</h1>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="15" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Оцениваем предельное количество запросов</h1>
-<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="16" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Ограничиваем <strong>max-concurrent-queries</strong></h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The maximum number of concurrent queries </span>
-  <span class="hljs-comment"># allowed to be executing at one time.  </span>
-  <span class="hljs-comment"># If a query is executed and exceeds this limit, </span>
-  <span class="hljs-comment"># an error is returned to the caller.  </span>
-  <span class="hljs-comment"># This limit can be disabled by setting it to 0.</span>
-  <span class="hljs-string">max-concurrent-queries</span> <span class="hljs-string">=</span> <span class="hljs-number">5</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="17" data-marpit-pagination-total="47" style="--paginate:true;--class:error;--theme:tdconf;">
-<h1>Ошибка при достижении <strong>max-concurrent-queries</strong></h1>
-<p><strong><em><img src="img/max-concurrent-queries.error.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="18" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Оцениваем предельную длительность запросов</h1>
-<p><strong><em><img src="img/query-timeout.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="19" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Ограничиваем <strong>query-timeout</strong></h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The maximum time a query will is allowed </span>
-  <span class="hljs-comment"># to execute before being killed by the system.  </span>
-  <span class="hljs-comment"># This limit can help prevent run away queries.  </span>
-  <span class="hljs-comment"># Setting the value to 0 disables the limit.</span>
-  <span class="hljs-string">query-timeout</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;90s&quot;</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="20" data-marpit-pagination-total="47" style="--paginate:true;--class:error;--theme:tdconf;">
-<h1>Ошибка при достижении <strong>query-timeout</strong></h1>
-<p><strong><em><img src="img/query-timeout.error.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="21" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Оцениваем предельное количество тегов ответа</h1>
-<p><strong><em><img src="img/influxdb.series.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="22" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Ограничиваем coordinator/max-select-series</h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The maximum number of series a SELECT can run. </span>
-  <span class="hljs-comment"># A value of 0 will make the maximum series</span>
-  <span class="hljs-comment"># count unlimited.</span>
-  
-  <span class="hljs-comment"># max-select-series = 0</span>
-  <span class="hljs-string">max-select-series</span> <span class="hljs-string">=</span> <span class="hljs-number">1000</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="23" data-marpit-pagination-total="47" style="--paginate:true;--class:error;--theme:tdconf;">
-<h1>Ошибка при достижении max-select-series</h1>
-<p><strong><em><img src="img/max-select-series.error.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="24" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Оцениваем предел группировки по времени</h1>
-<p><strong><em><img src="img/influxdb.series.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="25" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Ограничиваем coordinator/max-select-buckets</h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The maxium number of group by </span>
-  <span class="hljs-comment"># time bucket a SELECT can create.</span>
-  <span class="hljs-comment"># A value of zero will max the maximum </span>
-  <span class="hljs-comment"># number of buckets unlimited.</span>
-  
-  <span class="hljs-comment"># max-select-buckets = 0</span>
-  <span class="hljs-string">max-select-buckets</span> <span class="hljs-string">=</span> <span class="hljs-number">1900</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="26" data-marpit-pagination-total="47" style="--paginate:true;--class:error;--theme:tdconf;">
-<h1>Ошибка при достижении max-select-buckets</h1>
-<p><strong><em><img src="img/max-select-buckets.error.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="27" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Оцениваем предельное количество точек ответа</h1>
-<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
-<p>Предельное значение:</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>Группы по тегам x 
-Группы по времени x
-Количество полей
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="28" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Количество точек ответа и размер ответа</h1>
-<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="29" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Количество точек ответа и исходящий трафик</h1>
-<p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="30" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Ограничиваем coordinator/max-select-point</h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The maximum number of points a SELECT can process.  </span>
-  <span class="hljs-comment"># A value of 0 will make the maximum point count unlimited.  </span>
-  <span class="hljs-comment"># This will only be checked every second so queries will not</span>
-  <span class="hljs-comment"># be aborted immediately when hitting the limit.</span>
-  
-  <span class="hljs-comment"># max-select-point = 0</span>
-  <span class="hljs-string">max-select-point</span> <span class="hljs-string">=</span> <span class="hljs-number">20000</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-class="error" data-theme="tdconf" class="error" data-marpit-pagination="31" data-marpit-pagination-total="47" style="--paginate:true;--class:error;--theme:tdconf;">
-<h1>Ошибка при достижении max-select-point</h1>
-<p><strong><em><img src="img/max-select-point.error.png" alt="  " /></em></strong></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="32" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="74" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Замер длительности запроса из Grafana в InfluxDB</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="33" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="75" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Замер средней длительности</h1>
 <p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="34" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
-<h1>Логирование медленных запросов</h1>
-<pre><code class="language-yaml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[<span class="hljs-string">coordinator</span>]
-  <span class="hljs-comment"># The time threshold when a query will be </span>
-  <span class="hljs-comment"># logged as a slow query.  </span>
-  <span class="hljs-comment"># This limit can be set to help</span>
-  <span class="hljs-comment"># discover slow or resource intensive queries.  </span>
-  <span class="hljs-comment"># Setting the value to 0 disables the slow query logging.</span>
-  <span class="hljs-string">log-queries-after</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;5s&quot;</span>
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="35" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="76" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Замер длительности конкретных запросов</h1>
 <h2><strong>По HAR-логу с POST-запросами</strong></h2>
 <p><strong><em><img src="img/influxdb.requests.png" alt="  " /></em></strong></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="36" data-marpit-pagination-total="47" style="--paginate:true;--class:head2;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-paginate="true" data-class="head2" data-theme="tdconf" class="head2" data-marpit-pagination="77" data-marpit-pagination-total="87" style="--paginate:true;--class:head2;--theme:tdconf;">
 <h1>Анализ плана запроса к InfluxDB</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="37" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="78" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Разделение баз данных по серверам</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="38" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="79" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="79" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Уменьшение Shared Size для экономии оперативной памяти</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="39" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
-<h1>Изменение типа индекса с memory на tsi1</h1>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="40" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="80" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="80" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Удаление значений тегов с низкой селективностью</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="41" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="81" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="81" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Увеличение гранулярности хранения метрик</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="42" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="82" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="82" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Подготовка данных для ответа с помощью Continuous Queries</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="43" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="83" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="83" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Быстрые фильтры по тегам: метаданные и данные</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="44" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="84" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="84" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Переход с InfluxQL на Flux</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="45" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="85" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="85" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Смена БД InfluxDB v1, InfluxDB v2, VictoriaMetrics, ClickHouse</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="46" data-marpit-pagination-total="47" style="--paginate:true;--class:main;--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="86" data-paginate="true" data-class="main" data-theme="tdconf" class="main" data-marpit-pagination="86" data-marpit-pagination-total="87" style="--paginate:true;--class:main;--theme:tdconf;">
 <h1>Итоги</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-class="lead12" data-footer="Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)" data-theme="tdconf" class="lead12" data-marpit-pagination="47" data-marpit-pagination-total="47" style="--paginate:true;--class:lead12;--footer:Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench);--theme:tdconf;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="87" data-paginate="true" data-class="lead12" data-footer="Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)" data-theme="tdconf" class="lead12" data-marpit-pagination="87" data-marpit-pagination-total="87" style="--paginate:true;--class:lead12;--footer:Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench);--theme:tdconf;">
 <h1>Вопросы/ответы</h1>
 <h1>Как ускорить запросы к InfluxDB</h1>
 <h2>Смирнов Вячеслав</h2>
