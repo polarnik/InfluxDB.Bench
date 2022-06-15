@@ -24,6 +24,7 @@
     --text-color: #fff;
 
     --tdconf: #AACF37;
+    --tdconf_half: #AACF37B0;
 }
 
 section {
@@ -118,10 +119,15 @@ section > p > code
 section pre, section > code, section > pre, section > p {
     margin: 30px;
 }
-section li::marker {
+
+strong {
     color: var(--tdconf);
 }
 
-b, h1 strong, strong {
-    color: var(--tdconf);
+li::marker {
+    color: var(--tdconf_half);
+}
+
+section.invert strong, section.invert li::marker {
+    text-shadow: 0px 1px 2px var(--bg-color);
 }

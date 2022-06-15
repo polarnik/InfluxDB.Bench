@@ -16,7 +16,7 @@ _paginate: false
 
 ## Смирнов Вячеслав
 
-### Miro 
+### ![h:35](themes/img/lead/miro.svg) Miro 
 
 <!--
 
@@ -25,7 +25,7 @@ _paginate: false
 ---
 <!-- _class: title -->
 
-# Ускоряю и тестирую инфраструктурные сервисы в Miro
+# Ускоряю и тестирую инфраструктурные сервисы в ![h:35](themes/img/lead/miro.svg) Miro
 ## Развиваю сообщество нагрузочников
 ### @qa_load
 
@@ -122,7 +122,7 @@ _paginate: false
 ---
 # Оптимизация выборки c __InfluxDB__ и __Grafana__ OSS
 
-![bg 75%](img/grafana.optimisation.png)
+![bg 90%](img/grafana.optimisation.png)
 
 
 ---
@@ -267,7 +267,7 @@ _paginate: false
 ![bg fit](img/server.split.png)
 
 ---
-# __Семь контейнеров__* быстрее одного большого
+# __Семь контейнеров__ быстрее одного большого?
 ![bg fit](img/docker.split.png)
 
 
@@ -289,9 +289,70 @@ _paginate: false
 - Использование отдельной базы данных для хранения общей статистики
 
 
+---
+# __4.__ ⚙️ Кеширование ответов на запросы от __Grafana__ к __InfluxDB__ с __NGINX__
+
+- Кеширование __GET__-запросов в __NGINX__ (нужно)
+
+- Кеширование __POST__-запросов в __NGINX__ (не нужно)
+- Влияние интервалов времени __Grafana__ на кеширование
+- Замена динамического интервала вида __`now()-6h...now()`__ статитическим
 
 ---
-# __4.__ ⚙️ Конфигурирование сервера __InfluxDB__
+
+![bg fit 90%](img/nginx_cache.png)
+
+---
+
+![bg 90%](img/nginx_boost.png)
+
+---
+
+# __InfluxDB__ endpoints: кешируем запросы
+
+- __`https://docs.influxdata.com/influxdb/v1.8/tools/api/`__
+- /debug/pprof (GET)
+- /debug/requests (GET)
+- /debug/vars (GET)
+- /ping (GET, HEAD)
+- __/query (GET, POST)__ ‼️
+- /write (POST)
+- /metrics (GET)
+- /api/v2/query (POST)
+- /api/v2/write (POST)
+- /health (GET)
+
+---
+
+# __InfluxDB__ endpoint __/query__ (GET, POST)
+
+- GET:
+  - __SELECT__ ‼️
+  - __SHOW__ ‼️
+
+- POST:
+  - SELECT INTO
+  - ALTER
+  - CREATE
+  - DELETE
+  - DROP
+  - GRANT
+  - KILL
+  - REVOKE
+
+---
+<!-- _class: invert -->
+# __4.__ ⚙️ Кеширование ответов на запросы от __Grafana__ к __InfluxDB__ с __NGINX__
+
+- Кеширование __GET__-запросов в __NGINX__
+
+- Кеширование __POST__-запросов в __NGINX__
+- Влияние интервалов времени __Grafana__ на кеширование
+- Замена динамического интервала вида __`now()-6h...now()`__ статитическим
+
+
+---
+# __5.__ ⚙️ Конфигурирование сервера __InfluxDB__
 
 - Ограничиваем __`max-concurrent-queries`__
   - Ограничиваем __`max_conns`__ в __nginx__ upstream
@@ -503,7 +564,7 @@ _paginate: false
 
 ---
 <!-- _class: invert -->
-# __4.__ ⚙️ Конфигурирование сервера __InfluxDB__
+# __5.__ ⚙️ Конфигурирование сервера __InfluxDB__
 
 - Ограничиваем __`max-concurrent-queries`__
   - Ограничиваем __`max_conns`__ в __nginx__ upstream
@@ -517,25 +578,6 @@ _paginate: false
   - Ограничиваем __Max data points__ в __Grafana__ Query options
 - Изменение типа индекса с __`memory`__ на __`tsi1`__
 - Логирование медленных запросов c __`log-queries-after`__
-
----
-# __5.__ ⚙️ Кеширование ответов на запросы от __Grafana__ к __InfluxDB__ с __NGINX__
-
-- Кеширование __GET__-запросов в __NGINX__
-
-- Кеширование __POST__-запросов в __NGINX__
-- Влияние интервалов времени __Grafana__ на кеширование
-- Замена динамического интервала вида __`now()-6h...now()`__ статитическим
-
----
-<!-- _class: invert -->
-# __5.__ ⚙️ Кеширование ответов на запросы от __Grafana__ к __InfluxDB__ с __NGINX__
-
-- Кеширование __GET__-запросов в __NGINX__
-
-- Кеширование __POST__-запросов в __NGINX__
-- Влияние интервалов времени __Grafana__ на кеширование
-- Замена динамического интервала вида __`now()-6h...now()`__ статитическим
 
 
 ---
@@ -606,141 +648,6 @@ _paginate: false
 5) Переход с __InfluxQL__ на __Flux__
 5) Смена БД __InfluxDB__ v1, __InfluxDB__ v2, __VictoriaMetrics__, __ClickHouse__
 5) Итоги
-
----
-<!-- _class: main
--->
-
-# Когда оптимизация InfluxDB важна
-
----
-
-# Большое количество тестов производительности
-
-## __JMeter, Gatling, Perfomance Center, Tank__
-
-## __Плюс мониторинг в InfluxDB__
-
-**_![  ](img/tools.png)_**
-
----
-
-# Тяжелые отчеты и конкурентные запросы
-
-**_![  ](img/reports.png)_**
-
----
-
-# Нехватка памяти для InfluxDB и перезапуски
-
-**_![  ](img/memory.limit.png)_**
-
----
-<!-- _class: main
--->
-
-# Ресурсы для InfluxDB и их мониторинг
-
----
-
-# Оперативная память сервера
-
-**_![  ](img/memory.limit.png)_**
-
----
-
-# Количество конкурентных запросов
-
-**_![  ](img/influxdb.requests.png)_**
-
----
-
-# Размеры шард
-
-**_![  ](img/influxdb.requests.png)_**
-
----
-
-# Настроенный мониторинг (доска Grafana)
-
-**_![  ](img/influxdb.requests.png)_**
-
-
----
-<!-- _class: main
--->
-
-# Замер длительности запроса из Grafana в InfluxDB
-
----
-
-# Замер средней длительности
-
-**_![  ](img/influxdb.requests.png)_**
-
-
----
-
-# Замер длительности конкретных запросов
-
-## __По HAR-логу с POST-запросами__
-
-**_![  ](img/influxdb.requests.png)_**
-
----
-
-# Анализ плана запроса к InfluxDB
-
-
----
-<!-- _class: main
--->
-
-# Разделение баз данных по серверам
-
----
-<!-- _class: main
--->
-
-# Уменьшение Shared Size для экономии оперативной памяти
-
-
----
-<!-- _class: main
--->
-
-# Удаление значений тегов с низкой селективностью
-
----
-<!-- _class: main
--->
-
-# Увеличение гранулярности хранения метрик
-
-
----
-<!-- _class: main
--->
-
-# Подготовка данных для ответа с помощью Continuous Queries
-
----
-<!-- _class: main
--->
-
-# Быстрые фильтры по тегам: метаданные и данные
-
----
-<!-- _class: main
--->
-
-# Переход с InfluxQL на Flux
-
----
-<!-- _class: main
--->
-
-# Смена БД InfluxDB v1, InfluxDB v2, VictoriaMetrics, ClickHouse
 
 ---
 <!-- _class: main
