@@ -128,6 +128,16 @@ li::marker {
     color: var(--tdconf_half);
 }
 
-section.invert strong, section.invert li::marker {
-    text-shadow: 0px 1px 2px var(--bg-color);
+section.invert strong {
+    color: var(--bg-color);
+    text-shadow: 1px 2px 3px var(--tdconf_half);
+    font-family: 'TTTravels-DemiBold';
+}
+
+section.main h1 {
+    font-size: 350%;
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 93%;
 }
