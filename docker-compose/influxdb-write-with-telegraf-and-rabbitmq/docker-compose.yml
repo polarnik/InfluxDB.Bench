@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  influxdb:
+    image: influxdb:1.8.10
+    restart: unless-stopped
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=true
+      - INFLUXDB_SHARD_PRECREATION=false
+    volumes:
+      - influx-data:/var/lib/influxdb/
+      - "../config/influxdb-v1.8/influxdb.v.1.8.default.conf:/etc/influxdb/influxdb.conf:ro"
+      - "../config/influxdb-v1.8/backup:/backup:ro"
+      - "../config/influxdb-v1.8/backup/init.all.sh:/docker-entrypoint-initdb.d/init.sh:ro"
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -XGET localhost:8086/health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 90s
+
+  grafana:
+    image: grafana/grafana:8.5.6
+    restart: unless-stopped
+    environment:
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - "../config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro"
+      - "../config/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro"
+      - "../config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro"
+    ports:
+      - 3002:3000
+
+  jmeter:
+    image: maven:3.8.1-openjdk-11
+    environment:
+      - hostname=jmeter
+    volumes:
+      - "../../tests/jmeter-java-dsl-test/src/:/tmp/test/src/:ro"
+      - "../../tests/jmeter-java-dsl-test/pom.xml:/tmp/test/pom.xml:ro"
+      - maven-jmeter-repository:/root/.m2/repository
+    restart: "no"
+    command: "mvn -Dtest=WebTest#maxPerf test"
+    working_dir: "/tmp/test/"
+
+  web:
+    image: nginx:1.23.0
+
+volumes:
+  maven-jmeter-repository:
+  influx-data:
+  grafana-data:

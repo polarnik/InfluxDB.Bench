@@ -200,10 +200,6 @@ _paginate: false
 ---
 # Мониторинг логов __Grafana__ (тяжелые отчеты)
 
----
-# Проект __influxdb-bench__ на __github__, где настроен мониторинг
-
-## `https://github.com/polarnik/influxdb-bench`
 
 ---
 <!-- _class: invert -->
@@ -334,11 +330,28 @@ _paginate: false
 
 - __Grafana__ как реестр активных баз данных
 
-- Переименование медленной базы данных в __{name}-{from}-{to}__
-- Перенос файлов базы данных __{name}-{from}-{to}__ на архивный сервер
+- Перенос файлов базы данных __{name}__ на архивный сервер
 - Создание пустой базы данных __{name}-{from}__
 - Настройка __Grafana DataSource__ с именем __{name}__ на новую базу данных
 - Создание __Grafana DataSource__ для архивной базы данных
+
+---
+
+# __Grafana__ как реестр активных баз данных
+
+![bg 85%](img/grafana-datasources.png)
+
+---
+
+# Имеем __DataSource__ с именем JMeter в __Grafana__ 
+
+![bg 85%](img/grafana-slow-db.png)
+
+---
+
+# Переключаем __DataSource__ на новую базу данных
+
+![bg 85%](img/grafana-two-db.png)
 
 ---
 <!-- _class: invert -->
@@ -346,8 +359,7 @@ _paginate: false
 
 - __Grafana__ как реестр активных баз данных
 
-- Переименование медленной базы данных в __{name}-{from}-{to}__
-- Перенос файлов базы данных __{name}-{from}-{to}__ на архивный сервер
+- Перенос файлов базы данных __{name}__ на архивный сервер
 - Создание пустой базы данных __{name}-{from}__
 - Настройка __Grafana DataSource__ с именем __{name}__ на новую базу данных
 - Создание __Grafana DataSource__ для архивной базы данных
@@ -374,13 +386,13 @@ _paginate: false
 
 
 ---
-# __5.__ ⚙️ Сокращение количества запросов из __JMeter__, __Gatling__, __Telegraf__, ...
+# __5.__ ⚙️ Сокращение запросов из __JMeter__, __Gatling__,  ...
 
 - __Batch, batch, batch...__ увеличиваем размер batch-а при вставке
 
-- Замена интервала в __1 секунду__ на __1 минуту__ для тестов дольше __5 минут__
+- Не используем переменные в имени запроса
 
-- Детальный отчет по распределенному тесту: __проблема квантилей__
+- Замена интервала в __1 секунду__ на __1 минуту__ для тестов дольше __5 минут__
 
 - Во время теста достаточно уровня детализации __summary__
 
@@ -388,17 +400,205 @@ _paginate: false
 
 - Детальный отчет можно формировать после теста
 
+
+---
+
+# Настройки __Gatling__ по умолчанию
+
+```yaml
+gatling {
+  data {
+    writers = [console, file]
+
+    graphite {
+      host = "localhost"
+      port = 2003
+      #light = false              # only send the all* stats
+      #protocol = "tcp"           # "tcp", "udp"
+      #rootPathPrefix = "gatling" # the root prefix of the metrics
+      #bufferSize = 8192          # internal data buffer size, in bytes
+      #writePeriod = 1            # write period, in seconds
+    }
+  }
+}
+```
+
+---
+
+# __Batch, batch, batch...__ увеличиваем размер batch-а
+
+# Пусть копим метрики __60 сек__
+
+```yaml
+  writers = [console, file, graphite] # +graphite
+  graphite {
+    host = "localhost"
+    port = 2003
+    #light = false           
+    #protocol = "tcp"        
+    bufferSize = 65000       # 🚀 TCP limit 64k (было 8192)
+    writePeriod = 60         # 🚀 Batch (было 1) 
+  }
+```
+
+---
+
+# __Batch, batch, batch...__ 
+
+# Копим метрики __60 сек__, без деталей
+
+```yaml
+  writers = [console, file, graphite] # +graphite
+  graphite {
+    host = "localhost"
+    port = 2003
+    light = true             # 🚀 без деталей (было false)
+    #protocol = "tcp"        
+    bufferSize = 65000       
+    writePeriod = 60          
+  }
+```
+
+---
+
+# __Batch, batch, batch...__ 
+
+# Копим метрики __60 сек__, без деталей, с потерями
+
+```yaml
+  writers = [console, file, graphite] # +graphite
+  graphite {
+    host = "localhost"
+    port = 2004              # udp-порт (было 2003)
+    light = true             
+    protocol = "udp"         # 🚀 с потерями (было tcp)
+    bufferSize = 65000       
+    writePeriod = 60          
+  }
+```
+---
+
+# Настройки __JMeter__ по умолчанию
+
+```yaml
+QUEUE_SIZE=5000 # Async Queue size
+# Backend metrics window mode (fixed=fixed-size window, timed=time boxed)
+backend_metrics_window_mode=fixed
+# Backend metrics sliding window size for Percentiles, Min, Max
+backend_metrics_window=100
+
+# Backend metrics sliding window size for Percentiles, Min, Max
+# when backend_metrics_window_mode is timed
+# Setting this value too high can lead to OOM
+# backend_metrics_large_window=5000
+# Send interval in second
+# Defaults to 5 seconds
+backend_influxdb.send_interval=5
+```
+
+---
+
+# __Batch, batch, batch...__ увеличиваем размер batch-а
+
+# Пусть у нас __1200 rps__ и копим метрики __60 сек__
+
+```yaml
+QUEUE_SIZE=72000 # 1200x60, было 5000, Async Queue size
+```
+Конфиг для `backend_metrics_window_mode=fixed` __(не очищается)__:
+```yaml
+backend_influxdb.send_interval=60 # было 5
+backend_metrics_window=72000 # 1200x60, было 100
+```
+Конфиг для `backend_metrics_window_mode=timed` __(очищается 🚀)__:
+```yaml
+backend_influxdb.send_interval=60 # было 5
+backend_metrics_large_window=72000 # 1200x60, было 5000
+```
+
+
+
+---
+
+# __JMeter__-сценарий, с медленной статистикой
+
+```java
+var plan =  scenario.sendHttp(
+  testId: getTestId(linksCount), 
+  linksCount: linksCount, 
+  nameOfSampler: "web?id=${id} (GET)" //переменная ${id} в имени
+);
+```
+## Получим много тегов в __InfluxDB__ и большой индекс:
+
+- `web?id=0 (GET)`
+- `web?id=1 (GET)`
+- ...
+- `web?id=1000000 (GET)`
+
+---
+<!-- _class: error  -->
+
+# Или вообще ничего  не запишем: __ERROR__ org.apache.jmeter.visualizers.backend.influxdb
+
+```
+failed to send data to influxDB server.
+
+Error writing metrics to influxDB Url: 
+http://influxdb:8086/write?db=jmeter100000, 
+responseCode: 400, responseBody:  {"error": "partial write:
+  max-values-per-tag limit exceeded (100000/100000): 
+  measurement=\"jmeter\" tag=\"transaction\" 
+  value=\"web?id=19806 (GET)\" dropped=2"}
+
+Error writing metrics to influxDB Url: 
+http://influxdb:8086/write?db=jmeter100000, 
+responseCode: 413, responseBody: {"error":"Request Entity Too Large"}
+```
+---
+
+# Не используем переменные в имени запроса
+
+
+```java
+var plan =  scenario.sendHttp(
+  testId: getTestId(linksCount), 
+  linksCount: linksCount, 
+  nameOfSampler: "web?id={id} (GET)" //вот так быстрее
+);
+```
+## Получим один тег в __InfluxDB__ и малый индекс:
+
+- `web?id={id} (GET)`
+
+---
+
+# __SLA__ можно проверять по % ошибок (в __summury__)
+# __Assertion__ на длительность вставить в тест
+
+- для запросов в JMeter: [__Duration Assertion__](https://jmeter.apache.org/usermanual/component_reference.html#Duration_Assertion)
+- для транзакций в JMeter: [__JSR-223 Listener__](https://gist.github.com/polarnik/7f5fdc5c70809c879dd42904b8639f31)
+```
+jmeter.apache.org/usermanual/component_reference.html#Duration_Assertion
+gist.github.com/polarnik/7f5fdc5c70809c879dd42904b8639f31
+```
+- для запросов в Gatling: [__`.check(responseTimeInMillis.lte(100))`__](https://gatling.io/docs/gatling/reference/current/core/check/#responsetimeinmillis)
+- для теста в Gatling: [__Assertions__](https://gatling.io/docs/gatling/reference/current/core/assertions/)
+
+```
+gatling.io/docs/gatling/reference/current/core/check/#responsetimeinmillis
+gatling.io/docs/gatling/reference/current/core/assertions/
+```
+
 ---
 
 <!-- _class: invert  -->
 
-# __5.__ ⚙️ Сокращение количества запросов из __JMeter__, __Gatling__, __Telegraf__, ...
+# __5.__ ⚙️ Сокращение запросов из __JMeter__, __Gatling__, ...
 
 - __Batch, batch, batch...__ увеличиваем размер batch-а при вставке
 
 - Замена интервала в __1 секунду__ на __1 минуту__ для тестов дольше __5 минут__
-
-- Детальный отчет по распределенному тесту: __проблема квантилей__
 
 - Во время теста достаточно уровня детализации __summary__
 
@@ -466,29 +666,48 @@ _paginate: false
 
 ---
 
-# Примеры запросов к InfluxDB
-
-```bash
-curl -G 'http://influxdb:8086/query?db=mydb' --data-urlencode \
-  'q=SELECT * FROM "metrics"'
-```
-
-```
-http://influxdb:8086/query?db=mydb
-&q=SELECT+%2A+FROM+%22metrics%22
-```
+# Как-бы статический интервал __Last 6 hours__ UTC:
 
 ```bash
 curl -G 'http://influxdb:8086/query?db=mydb' --data-urlencode \
   'q=SELECT * FROM "metrics" \
-  where time>1655292146382 AND time<1655293218949'
+  where time>1655827200000 AND time<1655848800000'
 ```
 
+# Спустя 30 секунд __Grafana__ сформирует запрос:
+```bash
+curl -G 'http://influxdb:8086/query?db=mydb' --data-urlencode \
+  'q=SELECT * FROM "metrics" \
+  where time>1655827230023 AND time<1655848830023'
 ```
-http://influxdb:8086/query?db=mydb
-&q=SELECT+%2A+FROM+%22metrics%22+%5C%0A
-+where+time%3E1655292146382+AND+time%3C165529321894
+# А это уже новый URL, новый ключ кеширования
+
+---
+
+# Важен __статический интервал__ для кеширования
+
+# __Абсолютный:__
+
+![width:1150](img/inverval.ok.png)
+
+# Не относительный: 
+
+![width:1150](img/inverval.ko.png)
+
+---
+
+
+# Ссылка в __Grafana Text (HTML)__ для автоматизации
+
+```html
+<h2> 
+<a href="/d/UID/?from=${__from}&to=${__to}&${db:queryparam}">
+Select static time interval
+</a>
+</h2>
 ```
+
+![width:1150](img/static.time.link.png)
 
 ---
 <!-- _class: invert -->
@@ -523,17 +742,6 @@ http://influxdb:8086/query?db=mydb
 - Изменение типа индекса с __`memory`__ на __`tsi1`__
 - Логирование медленных запросов c __`log-queries-after`__
 
-
----
-
-
-# Ограничение интенсивности и параллельности запросов в __`[coordinator]`__
-
----
-
-# Оцениваем предельное количество запросов
-
-**_![  ](img/influxdb.requests.png)_**
 
 ---
 
@@ -760,6 +968,14 @@ http://influxdb:8086/query?db=mydb
 ---
 # __14.__ ⚙️ Смена БД __InfluxDB__ v1.8, __InfluxDB__ v2, __VictoriaMetrics__ или __ClickHouse__
 
+## Разгонный потенциал __InfluxDB__ v1.8 огромен
+
+## __InfluxDB__ v2 использует быстрый движок
+
+## __VictoriaMetrics__ кеширует ответы и жмет данные
+
+## __ClickHouse__ быстр (при наличии памяти) и удобен
+
 ---
 <!-- _class: invert -->
 # __1.__ ⁉️ Когда оптимизация __InfluxDB__ важна
@@ -775,7 +991,7 @@ http://influxdb:8086/query?db=mydb
 - Оптимизация аггрегации метрик c __Continuous Queries__
 
 ---
-<!-- class: invert -->
+<!-- _class: invert -->
 
 # Содержание
 
@@ -798,22 +1014,24 @@ http://influxdb:8086/query?db=mydb
 <!-- _class: main
 -->
 
-# Итоги
+# Делите, кешируйте, ускоряйте! 
 
+### `https://github.com/polarnik/influxdb-bench`
 
 ---
 
-<!-- _class: lead12
+<!-- 
 _footer: 'Cсылка на [слайды](https://polarnik.github.io/influxdb-bench/), ссылка [на бенчмарк](https://github.com/polarnik/influxdb-bench)'
 -->
 
-# Вопросы/ответы
 
-# Как ускорить запросы к InfluxDB
+# Ускорение __InfluxDB__, Смирнов Вячеслав, __@qa_load__
 
-## Смирнов Вячеслав
+### Feedback :
 
-### @qa_load
+### 🙂 👍 👉
+
+### 👀 🎦 🍿
 
 
-
+![bg 42%](img/qr-code.png)

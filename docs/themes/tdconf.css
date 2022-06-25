@@ -23,8 +23,12 @@
     --bg-color: #000000;
     --text-color: #fff;
 
+    --tag: #6e9fff;
+
     --tdconf: #AACF37;
     --tdconf_half: #AACF37B0;
+
+    --error: #301010;
 }
 
 section {
@@ -47,6 +51,13 @@ section {
     background-image: url("themes/img/Logo_TDC.svg"), url("themes/img/TestDriven_footer.png");
     color: var(--bg-color) !important;
     text-shadow: 0px 0px 5px var(--text-color);
+ }
+
+ section.error {
+    background-color: var(--error) ;
+    background-image: url("themes/img/Logo_TDC.svg"), url("themes/img/TestDriven_footer.png");
+    color: var(--text-color) !important;
+    text-shadow: 0px 0px 5px var(--bg-color);
  }
 
 
@@ -140,4 +151,8 @@ section.main h1 {
     text-align: center;
     top: 10%;
     width: 93%;
+}
+
+.hljs-tag, .hljs-name {
+    color: var(--tag);
 }
