@@ -1081,19 +1081,19 @@ GROUP BY testId, time(1d);
 ---
 # Путь к __Continuous Queries__ 
 
-* 🔬 Анализ логов __InfluxDB__
+- 🔬 Анализ логов __InfluxDB__
 
 ```
 log-queries-after = "2s"
 ```
 
-* 🔬 Замер длительности ответа на запрос из __Grafana__ в __InfluxDB__
+- 🔬 Замер длительности ответа на запрос из __Grafana__ в __InfluxDB__
 
 ```
 Grafana Datasource: Access Browser, Method POST + WebConsole
 ```
 
-* 🚀 Подготовка данных для ответа с помощью __Continuous Queries__
+- 🚀 Подготовка данных для ответа с помощью __Continuous Queries__
 
 ```sql
 RESAMPLE EVERY 10m FOR 1d
