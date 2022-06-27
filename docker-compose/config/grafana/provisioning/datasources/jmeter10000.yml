@@ -6,12 +6,14 @@ apiVersion: 1
 deleteDatasources:
   - name: jmeter10000
     orgId: 1
+  - name: jmeter10000_cache
+    orgId: 1
 
 # # list of datasources to insert/update depending
 # # on what's available in the database
 datasources:
   # <string, required> name of the datasource. Required
-  - name: jmeter
+  - name: jmeter10000
     # <string, required> datasource type. Required
     type: influxdb
     # <string, required> access mode. direct or proxy. Required
@@ -30,6 +32,30 @@ datasources:
     basicAuthUser: readuser
     jsonData:
       httpMode: POST
+    # <string> json object of data that will be encrypted.
+    secureJsonData:
+      # <string> basic auth password
+      basicAuthPassword: password
+  # <string, required> name of the datasource. Required
+  - name: jmeter10000_cache
+    # <string, required> datasource type. Required
+    type: influxdb
+    # <string, required> access mode. direct or proxy. Required
+    access: proxy
+    # <int> org id. will default to orgId 1 if not specified
+    orgId: 1
+    # <string> url
+    url: http://nginx_influxdb_proxy:80
+    # <string> database name, if used
+    database: jmeter10000
+    # <bool> allow users to edit datasources from the UI.
+    editable: false
+    # <bool> enable/disable basic auth
+    basicAuth: false
+    # <string> basic auth username
+    basicAuthUser: readuser
+    jsonData:
+      httpMode: GET
     # <string> json object of data that will be encrypted.
     secureJsonData:
       # <string> basic auth password

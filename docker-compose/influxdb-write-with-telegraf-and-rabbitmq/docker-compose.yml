@@ -1,12 +1,16 @@
-version: '3.8'
+version: '3'
 
 services:
   influxdb:
     image: influxdb:1.8.10
-    restart: unless-stopped
     environment:
       - INFLUXDB_REPORTING_DISABLED=true
       - INFLUXDB_SHARD_PRECREATION=false
+      - INFLUXDB_COORDINATOR_MAX_SELECT_SERIES=30000
+      - INFLUXDB_COORDINATOR_MAX_SELECT_BUCKETS=1920000
+      - INFLUXDB_COORDINATOR_QUERY_TIMEOUT=6000s
+      - INFLUXDB_COORDINATOR_MAX_SELECT_POINT=111000000
+      - INFLUXDB_COORDINATOR_LOG_QUERIES_AFTER=50ms
     volumes:
       - influx-data:/var/lib/influxdb/
       - "../config/influxdb-v1.8/influxdb.v.1.8.default.conf:/etc/influxdb/influxdb.conf:ro"
@@ -17,7 +21,14 @@ services:
       interval: 10s
       timeout: 10s
       retries: 30
-      start_period: 90s
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G
 
   grafana:
     image: grafana/grafana:8.5.6
@@ -46,10 +57,17 @@ services:
     command: "mvn -Dtest=WebTest#maxPerf test"
     working_dir: "/tmp/test/"
 
+  nginx_influxdb_proxy:
+    image: nginx:1.23.0
+    volumes:
+      - "../config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - nginx-data:/data/nginx/cache
+
   web:
     image: nginx:1.23.0
 
 volumes:
+  nginx-data:
   maven-jmeter-repository:
   influx-data:
   grafana-data:

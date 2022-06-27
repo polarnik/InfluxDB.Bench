@@ -149,10 +149,18 @@ section.main h1 {
     font-size: 350%;
     position: absolute;
     text-align: center;
-    top: 10%;
+    top: 5%;
     width: 93%;
 }
 
 .hljs-tag, .hljs-name {
     color: var(--tag);
+}
+
+.hljs-string, .hljs-number, .hljs-keyword {
+    color: var(--tdconf);
+}
+
+.hljs-number, .hljs-keyword {
+    font-weight: bold;
 }
