@@ -1029,7 +1029,7 @@ Detected slow query:
   SELECT top(avg, 3) FROM jmeter 
   WHERE time >= now() - 1d AND time <= now() 
   GROUP BY time(1m), application, transaction, statut 
-  (qid: 27, database: jmeter10000, threshold: 50ms)
+  (qid: 27, database: jmeter10000, threshold: 2s)
 ```
 
 ---
