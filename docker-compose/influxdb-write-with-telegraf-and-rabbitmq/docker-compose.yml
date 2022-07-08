@@ -21,14 +21,6 @@ services:
       interval: 10s
       timeout: 10s
       retries: 30
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 2G
-        reservations:
-          cpus: '1'
-          memory: 1G
 
   grafana:
     image: grafana/grafana:8.5.6
